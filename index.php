@@ -1,12 +1,7 @@
 <?php
-
-$proxy = @$_GET['proxy'] ?: 'SOCKS5 127.0.0.1:8964; SOCKS 127.0.0.1:8964';
-
-$file = file_get_contents('flora_pac.pactmp');
-
-$file = preg_replace('/{{PROXY}}/', $proxy, $file);
+$file = file_get_contents('no_ads_compresssed.pac');
 
 header('Content-Type: application/x-ns-proxy-autoconfig; charset=UTF-8');
-header('Content-Disposition: attachment; filename="flora_pac.pac"');
+header('Content-Disposition: attachment; filename="no_ads_compressed.pac"');
 
 echo $file;
